@@ -8,8 +8,8 @@ let paymentShema = new mongoose.Schema({
   },
   amount: String,
   voucher: String,
-  startDate: Date,
-  endDate: Date
+  endDate: Date,
+  status: String
 });
 
 const Payments = mongoose.model('Payments', paymentShema);

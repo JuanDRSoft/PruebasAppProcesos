@@ -6,8 +6,8 @@ const validParams = [
   'lawyer',
   'amount',
   'voucher',
-  'startDate',
-  'endDate'
+  'endDate',
+  'status'
 ];
 
 function find(req, res, next) {
@@ -49,17 +49,24 @@ function findByLawyerCount(req, res, next) {
   });
 }
 function index(req, res) {
-  const options = {
-    page: 1,
-    limit: 1
-  };
+  // const options = {
+  //   page: 1,
+  //   limit: 1
+  // };
 
-  const page = req.query.page || 1;
-  const limit = 10;
+  // const page = req.query.page || 1;
+  // const limit = 10;
 
-  Payment.paginate({}, { limit, page }, function (err, result) {
-    res.json(result);
-  })
+  // Payment.paginate({}, { limit, page }, function (err, result) {
+  //   res.json(result);
+  // })
+  //   .then((doc) => {
+  //     res.json(doc);
+  //   })
+  //   .catch((err) => {
+  //     res.json(err);
+  //   });
+  Payment.find({})
     .then((doc) => {
       res.json(doc);
     })
