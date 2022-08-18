@@ -36,7 +36,6 @@ async function create(req, res, next) {
         'https://paymenth-method.herokuapp.com/payments',
         bodyData
       );
-      console.log(payment);
     }
   }
 }
